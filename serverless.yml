@@ -1,0 +1,57 @@
+service: nick-dynamodb-api-g16
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:ap-south-1:429937773353:table/Employee16"
+
+
+functions:
+  create:
+    handler: employee/create.create
+    events:
+      - http:
+          path: employee
+          method: post
+          cors: true
+
+  list:
+    handler: employee/list.list
+    events:
+      - http:
+          path: employee
+          method: get
+          cors: true
+
+  get:
+    handler: employee/get.get
+    events:
+      - http:
+          path: employee/{id}
+          method: get
+          cors: true
+
+  update:
+    handler: employee/update.update
+    events:
+      - http:
+          path: employee/{id}
+          method: put
+          cors: true
+
+  delete:
+    handler: employee/delete.delete
+    events:
+      - http:
+          path: employee/{id}
+          method: delete
+          cors: true

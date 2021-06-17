@@ -1,0 +1,15 @@
+POST https://sljkdotmij.execute-api.us-east-1.amazonaws.com/dev/employee
+Content-Type: "application/json"
+
+{
+    "empID": 12,
+    "BU": "bu",
+    "accessModifier": 12,
+    "domain": "domain",
+    "email": "email@gmail.com",
+    "password": "pass",
+    "reportsTo": 34,
+    "salary": 45,
+    "user_name": "username",
+    "yearOfJoining": "2001"
+}

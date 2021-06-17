@@ -1,0 +1,14 @@
+{
+  "name": "citi",
+  "version": "1.0.0",
+  "description": "Automated employee management system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Deepak Lakhera",
+  "license": "MIT",
+  "dependencies": {
+    "serverless": "^2.46.0"
+  }
+}
